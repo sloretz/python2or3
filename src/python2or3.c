@@ -30,10 +30,10 @@ int main(int argc, char ** argv)
   null_terminated_argv[argc] = NULL;
 
   // Try python2 or python3 first
-  execvp("python" ROSPYTHON_PYTHON_VERSION, null_terminated_argv);
+  execvp("python" PYTHON_VERSION, null_terminated_argv);
 
   // That didn't work, use the full path to the python interpreter found when this was built
-  execv(ROSPYTHON_PYTHON_PATH, null_terminated_argv);
+  execv(PYTHON_PATH, null_terminated_argv);
 
   // Should never be executed
   free(null_terminated_argv);
